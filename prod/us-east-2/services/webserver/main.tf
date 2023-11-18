@@ -67,7 +67,7 @@ resource "aws_vpc_security_group_egress_rule" "allow_private_front_end_access_to
 }
 
 module "webserver" {
-  source = "git@github.com:Interview2023November/terraform-aws-modules-general.git//modules/virtual-machines/webserver"
+  source = "git@github.com:Interview2023November/terraform-aws-modules-general.git//modules/virtual-machines/webserver?ref=v0.1.0"
 
   name                   = "${local.name}-webserver"
   ami                    = "ami-0a4a145b049f27673"

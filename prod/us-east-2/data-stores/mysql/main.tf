@@ -45,7 +45,7 @@ resource "aws_security_group" "db" {
 }
 
 module "database_server" {
-  source = "git@github.com:Interview2023November/terraform-aws-modules-general.git//modules/data-stores/mysql"
+  source = "git@github.com:Interview2023November/terraform-aws-modules-general.git//modules/data-stores/mysql?ref=v0.1.0"
 
   name                   = "${local.name}-db"
   db_username            = random_string.username.result

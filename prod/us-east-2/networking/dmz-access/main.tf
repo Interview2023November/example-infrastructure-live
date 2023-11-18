@@ -84,7 +84,7 @@ resource "aws_vpc_security_group_ingress_rule" "allow_inbound_traffic_to_lb" {
 }
 
 module "nat_gateway" {
-  source = "git@github.com:Interview2023November/terraform-aws-modules-general.git//modules/networking/nat-gateway"
+  source = "git@github.com:Interview2023November/terraform-aws-modules-general.git//modules/networking/nat-gateway?ref=v0.1.0"
 
   name        = local.name
   environment = local.environment
