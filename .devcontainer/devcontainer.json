@@ -1,0 +1,28 @@
+{
+    "build": {
+        "dockerfile": "Dockerfile",
+        "context": ".",
+        "args": {}
+    },
+    "features": {
+        // install aws cli manually with a version before latest as latest has a bug at the moment...
+        // https://stackoverflow.com/questions/77464352/aws-cli-v2-installation-issue
+        // "ghcr.io/devcontainers/features/aws-cli:1": {
+        //     "version": "latest"
+        // },
+        "ghcr.io/devcontainers/features/terraform:1": {
+            "version": "latest"
+        },
+        "ghcr.io/devcontainers-contrib/features/packer-asdf:2": {
+            "version": "latest"
+        },
+        "ghcr.io/devcontainers/features/python:1": {
+            "version": "latest"
+        }
+    },
+    "remoteEnv": {
+        "AWS_ACCESS_KEY_ID": "${localEnv:AWS_ACCESS_KEY_ID}",
+        "AWS_SECRET_ACCESS_KEY": "${localEnv:AWS_SECRET_ACCESS_KEY}",
+        "AWS_SESSION_TOKEN": "${localEnv:AWS_SESSION_TOKEN}"
+    }
+}
